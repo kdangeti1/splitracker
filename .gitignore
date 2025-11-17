@@ -1,0 +1,27 @@
+node_modules
+dist
+build
+.env
+.env.local
+.env.*.local
+*.log
+.DS_Store
+.vscode/settings.json
+*.swp
+*.swo
+~*
+
+# Firebase
+.firebase/
+.firebaserc
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# IDE
+.idea/
+*.sublime-workspace
+
+# OS
+Thumbs.db
