@@ -118,20 +118,29 @@ Click **Continue** if settings look good.
 
 ### 3.3 Add Environment Variables
 
-On the **Environment Variables** screen, add:
+On the **Environment Variables** screen, add each Firebase variable **individually**:
+
+1. Click **+ Add More** (or the add button)
+2. For each variable below:
+   - **Key**: (e.g., `VITE_FIREBASE_API_KEY`)
+   - **Value**: (the value from your Firebase config in Step 1.4)
+   - **Environment**: Select all three checkboxes: **Production**, **Preview**, **Development**
+   - Click **Save**
+
+Variables to add (from Step 1.4 Firebase config):
 
 ```
-VITE_FIREBASE_API_KEY=<from Step 1.4>
-VITE_FIREBASE_AUTH_DOMAIN=<from Step 1.4>
-VITE_FIREBASE_PROJECT_ID=<from Step 1.4>
-VITE_FIREBASE_STORAGE_BUCKET=<from Step 1.4>
-VITE_FIREBASE_MESSAGING_SENDER_ID=<from Step 1.4>
-VITE_FIREBASE_APP_ID=<from Step 1.4>
+VITE_FIREBASE_API_KEY=<your API key>
+VITE_FIREBASE_AUTH_DOMAIN=<your auth domain>
+VITE_FIREBASE_PROJECT_ID=<your project ID>
+VITE_FIREBASE_STORAGE_BUCKET=<your storage bucket>
+VITE_FIREBASE_MESSAGING_SENDER_ID=<your messaging sender ID>
+VITE_FIREBASE_APP_ID=<your app ID>
 ```
 
-Set environment: **Production**, **Preview**, **Development**
+**Important**: If you see an `env` field at the bottom of the form showing `Development`, ignore it or leave it blank—it may cause an error. Focus on the Environment Variables section above.
 
-Click **Deploy**
+Once all 6 variables are added, click **Deploy**
 
 ### 3.4 Wait for Deploy
 
