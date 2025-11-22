@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate, Link } from 'react-router-dom'
 import {
   useAuth,
   fetchGroupsForUser,
@@ -9,6 +10,7 @@ import {
 
 export default function Dashboard() {
   const user = useAuth()
+  const navigate = useNavigate()
   const [groups, setGroups] = React.useState<any[]>([])
   const [invites, setInvites] = React.useState<any[]>([])
   const [loading, setLoading] = React.useState(false)
@@ -51,9 +53,9 @@ export default function Dashboard() {
       <h1>Dashboard</h1>
       <p>Signed in as: {user?.email}</p>
       <button onClick={() => signOutUser()}>Sign out</button>
-      <a href="/create-group" style={{ marginLeft: 8, textDecoration: 'none' }}>
-        <button>Create group</button>
-      </a>
+      <button onClick={() => navigate('/create-group')} style={{ marginLeft: 8 }}>
+        Create group
+      </button>
 
       {error && <div style={{ color: 'crimson', margin: '16px 0' }}>{error}</div>}
       {loading && <p>Loading...</p>}
@@ -98,7 +100,7 @@ export default function Dashboard() {
         <ul>
           {groups.map((g) => (
             <li key={g.id}>
-              <a href={`/group/${g.id}`}>{g.name || 'Untitled group'}</a>
+              <Link to={`/group/${g.id}`}>{g.name || 'Untitled group'}</Link>
             </li>
           ))}
         </ul>
